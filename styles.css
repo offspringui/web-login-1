@@ -1,4 +1,142 @@
+/* Variáveis para facilitar ajustes futuros */
+:root {
+    --font-family: Arial, sans-serif;
+    --bg-color: #f3f4f6;
+    --container-bg: #ffffff;
+    --container-border: #ddd;
+    --text-color-main: #333; /* Alterado para melhorar o contraste */
+    --highlight-color: mediumspringgreen;
+    --button-bg: #a0dfa2;
+    --button-hover-bg: #5f8261;
+    --input-border: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --container-padding: 20px 30px;
+    --font-size: 16px;
+    --input-padding: 10px;
+    --input-radius: 5px;
+    --button-radius: 5px;
+}
 
+/* Aplicar `box-sizing` global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Estilo base */
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc, #00d2ff, #ffffff);
+    font-family: var(--font-family, Arial, sans-serif);
+    background-color: var(--bg-color, );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo genérico para caixas centralizadas */
+.centered-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; /* Alterado para consistência com o pai */
+}
+
+/* Caixa principal */
+.login-box {
+    background-color: var(--container-bg);
+    border: 5px solid #6a11cb;
+    border-radius: 10px;
+    padding: var(--container-padding);
+    box-shadow: 0px 4px 6px var(--shadow-color);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Títulos */
 .login-box h2 {
-    color: mediumspringgreen;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+
+/* Inputs e campos de entrada */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+
+label {
+    display: block;
+    color: var(--text-color-main);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: 100%; /* Ajustado com o uso de `box-sizing: border-box` */
+    padding: var(--input-padding);
+    border: 1px solid var(--input-border);
+    border-radius: var(--input-radius);
+    font-size: 14px;
+}
+
+/* Hover e Focus nos campos de entrada */
+.input-field:hover {
+    border-color: var(--highlight-color); /* Indicação visual do hover */
+}
+
+.input-field:focus {
+    outline: 2px solid var(--highlight-color); /* Adicionado para foco */
+}
+
+/* Estilo para entradas inválidas */
+.input-field:invalid {
+    border-color: red; /* Exibição de erro */
+}
+
+/* Botão de enviar */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--button-bg);
+    color: white;
+    font-size: var(--font-size);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evitar quebra de texto */
+    overflow: hidden; /* Esconder texto extra */
+    text-overflow: ellipsis; /* Adicionar reticências se necessário */
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+button:focus {
+    outline: 2px solid var(--highlight-color); /* Adicionado para foco */
+}
+
+/* Para dispositivos menores */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 15px 20px;
+    }
+
+    .input-field {
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px; /* Ajustar tamanho do texto para telas menores */
+    }
 }
